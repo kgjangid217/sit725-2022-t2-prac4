@@ -28,12 +28,12 @@ const addCards = (items) => {
 }
 $(document).ready(function(){
     $('.materialboxed').materialbox();
-    addCards(cardList);
-    $('.modal').modal();
     $('#formSubmit').click(()=>{
         submitForm();
     })
-});
+    getProjects();
+    $('.modal').modal();
+  });
 const getProjects = () => {
     $.get('/api/projects',(response) => {
         if(response.statusCode==200){
